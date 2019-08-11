@@ -33,4 +33,13 @@ public class ProductRepositoryTest {
 
         assertNotNull(findProduct);
     }
+
+    @Test
+    public void whenFindAll_thenReturnAllProducts() {
+        Iterable<Product> products = productRepository.findAll();
+
+        assertNotNull(products);
+
+        products.forEach(product -> System.out.println(product));
+    }
 }

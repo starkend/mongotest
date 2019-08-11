@@ -253,4 +253,37 @@ public class Product {
     public void setAlcoholByVolume(String alcoholByVolume) {
         this.alcoholByVolume = alcoholByVolume;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", gtin14=" + gtin14 +
+                ", brandName='" + brandName + '\'' +
+                ", name='" + name + '\'' +
+                ", size='" + size + '\'' +
+                ", ingredients='" + ingredients + '\'' +
+                ", servingSize='" + servingSize + '\'' +
+                ", servingsPerContainer='" + servingsPerContainer + '\'' +
+                ", calories='" + calories + '\'' +
+                ", fatCalories='" + fatCalories + '\'' +
+                ", fat='" + fat + '\'' +
+                ", saturatedFat='" + saturatedFat + '\'' +
+                ", transFat='" + transFat + '\'' +
+                ", polyunsaturatedFat='" + polyunsaturatedFat + '\'' +
+                ", monounsaturatedFat='" + monounsaturatedFat + '\'' +
+                ", cholesterol='" + cholesterol + '\'' +
+                ", sodium='" + sodium + '\'' +
+                ", potassium='" + potassium + '\'' +
+                ", carbohydrate='" + carbohydrate + '\'' +
+                ", fiber='" + fiber + '\'' +
+                ", sugars='" + sugars + '\'' +
+                ", protein='" + protein + '\'' +
+                ", author='" + author + '\'' +
+                ", format='" + format + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", pages='" + pages + '\'' +
+                ", alcoholByVolume='" + alcoholByVolume + '\'' +
+                '}';
+    }
 }

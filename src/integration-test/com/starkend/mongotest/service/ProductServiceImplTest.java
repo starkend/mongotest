@@ -25,6 +25,6 @@ public class ProductServiceImplTest {
 
         assertFalse(productList.isEmpty());
 
-//        productList.forEach(p -> System.out.println(p.getName()));
+        productList.forEach(p -> System.out.println(p.getName()));
     }
 }

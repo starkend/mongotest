@@ -4,14 +4,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigInteger;
-
 @Document(collection="products")
 @TypeAlias("product")
 public class Product {
 
     @Id
-    private BigInteger id;
+    private String id;
 
     private Long gtin14;
     private String brandName;
@@ -40,11 +38,11 @@ public class Product {
     private String pages;
     private String alcoholByVolume;
 
-    public BigInteger getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(String id) {
         this.id = id;
     }
 

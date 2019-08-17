@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProductIngressService {
 
     List<ProductDto> getItemsList();
+
+    List<ProductDto> getItemsByQuery(String queryString);
 }

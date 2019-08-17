@@ -6,3 +6,15 @@
   right: 0;
   background: #eee;
 }
+.spacer {
+  height: 50px;
+  background: lightblue;
+}
+
+.side-nav {
+  background: lightblue;
+}
+
+mat-sidenav {
+  width: 200px;
+}

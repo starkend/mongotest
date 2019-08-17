@@ -13,4 +13,8 @@ export class ProductsService {
   getSavedProductList(): Observable<any> {
     return this.http.get(environment.apiUrl + '/savedProductList');
   }
+
+  getAPIProductList(): Observable<any> {
+    return this.http.get(environment.apiUrl + '/apiProductList');
+  }
 }

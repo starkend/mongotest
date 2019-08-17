@@ -14,11 +14,11 @@ export class SavedProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getProductList();
+    this.getSavedProductList();
     this.productColumns = ['name','brandName'];
   }
 
-  getProductList() {
+  getSavedProductList() {
     this.productsService.getSavedProductList().subscribe(
       data => {
         this.products = data;

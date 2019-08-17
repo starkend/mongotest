@@ -1,7 +1,7 @@
 package com.starkend.mongotest.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.starkend.mongotest.dto.ProductDto;
+import com.starkend.mongotest.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -15,13 +15,16 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductIngressServiceImpl implements ProductIngressService {
 
     @Value("${service.datakick.url}")
     private String BASE_URL;
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @Override
     public List<ProductDto> getItemsList() {
@@ -32,7 +35,8 @@ public class ProductServiceImpl implements ProductService{
                 BASE_URL,
                 HttpMethod.GET,
                 entity,
-                new ParameterizedTypeReference<List<ProductDto>>(){});
+                new ParameterizedTypeReference<List<ProductDto>>() {
+                });
 
         return responseEntity.getBody();
     }

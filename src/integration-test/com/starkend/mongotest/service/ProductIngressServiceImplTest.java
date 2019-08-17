@@ -14,17 +14,18 @@ import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MongotestApplication.class)
-public class ProductServiceImplTest {
+public class ProductIngressServiceImplTest {
 
     @Autowired
-    ProductService productService;
+    ProductIngressService productIngressService;
 
     @Test
     public void whenGetItems_thenReturnPopulatedItemsList() {
-        List<ProductDto> productList = productService.getItemsList();
+        List<ProductDto> productList = productIngressService.getItemsList();
 
         assertFalse(productList.isEmpty());
 
         productList.forEach(p -> System.out.println(p.getName()));
     }
+
 }

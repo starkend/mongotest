@@ -4,7 +4,7 @@ import com.starkend.mongotest.dto.ProductDto;
 
 import java.util.List;
 
-public interface ProductService {
+public interface ProductIngressService {
 
     List<ProductDto> getItemsList();
 }

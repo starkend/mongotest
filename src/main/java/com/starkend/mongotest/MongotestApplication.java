@@ -1,8 +1,8 @@
 package com.starkend.mongotest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.starkend.mongotest.service.ProductService;
-import com.starkend.mongotest.service.ProductServiceImpl;
+import com.starkend.mongotest.service.ProductIngressService;
+import com.starkend.mongotest.service.ProductIngressServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -29,7 +29,7 @@ public class MongotestApplication {
     }
 
     @Bean
-    public ProductService productService() { return new ProductServiceImpl(); }
+    public ProductIngressService productIngressService() { return new ProductIngressServiceImpl(); }
 
 
 }

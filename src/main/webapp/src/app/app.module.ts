@@ -23,13 +23,15 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {Router} from "@angular/router";
+import { SavedProductsComponent } from './saved-products/saved-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsSearchComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    SavedProductsComponent
   ],
   imports: [
     BrowserModule,

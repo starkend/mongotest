@@ -19,7 +19,7 @@ export class SavedProductsComponent implements OnInit {
   }
 
   getProductList() {
-    this.productsService.getProductList().subscribe(
+    this.productsService.getSavedProductList().subscribe(
       data => {
         this.products = data;
       }

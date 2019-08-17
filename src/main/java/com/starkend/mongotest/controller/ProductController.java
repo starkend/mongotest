@@ -16,7 +16,7 @@ public class ProductController {
     @Autowired
     ProductEgressService productEgressService;
 
-    @GetMapping("/productList")
+    @GetMapping("/savedProductList")
     public List<Product> getProductList() {
         return productEgressService.getProductList();
     }

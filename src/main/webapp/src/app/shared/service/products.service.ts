@@ -10,7 +10,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getProductList(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/productList');
+  getSavedProductList(): Observable<any> {
+    return this.http.get(environment.apiUrl + '/savedProductList');
   }
 }

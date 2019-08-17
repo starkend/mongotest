@@ -4,6 +4,7 @@ MongoDB proof of concept
 
 # Built with
 - **Spring Boot**
+- **Angular 8**
 - **MongoDB**
   - **Run via Docker**
     - docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.12

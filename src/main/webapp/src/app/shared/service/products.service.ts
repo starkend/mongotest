@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
@@ -16,5 +16,9 @@ export class ProductsService {
 
   getAPIProductList(): Observable<any> {
     return this.http.get(environment.apiUrl + '/apiProductList');
+  }
+
+  searchProducts(searchInput: string): Observable<any>  {
+    return this.http.post<any>(environment.apiUrl + '/searchProducts', searchInput);
   }
 }

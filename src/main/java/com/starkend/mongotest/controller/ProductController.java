@@ -5,9 +5,7 @@ import com.starkend.mongotest.model.Product;
 import com.starkend.mongotest.service.ProductEgressService;
 import com.starkend.mongotest.service.ProductIngressService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +24,11 @@ public class ProductController {
         return productEgressService.getProductList();
     }
 
-    @GetMapping("apiProductList")
+    @GetMapping("/apiProductList")
     public List<ProductDto> getAPIProductList() { return productIngressService.getItemsList(); }
+
+    @PostMapping("/searchProducts")
+    public List<ProductDto> searchProducts(@RequestBody String inputString) {
+        return productIngressService.getItemsByQuery(inputString);
+    }
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductsService} from "../shared/service/products.service";
+import {ProductsService} from '../shared/service/products.service';
 
 @Component({
   selector: 'app-products-search',
@@ -9,11 +9,13 @@ import {ProductsService} from "../shared/service/products.service";
 export class ProductsSearchComponent implements OnInit {
   products: Array<any>;
   productColumns: Array<any>;
+  searchInput: string;
 
   constructor(private productsService: ProductsService) {
   }
 
   ngOnInit() {
+    this.searchInput = '';
     this.productColumns = ['name','brandName'];
     this.getProductList();
   }
@@ -24,5 +26,12 @@ export class ProductsSearchComponent implements OnInit {
         this.products = data;
       }
     );
+  }
+
+  searchProducts() {
+    this.productsService.searchProducts(this.searchInput)
+      .subscribe( data => {
+        this.products = data;
+      });
   }
 }

@@ -31,4 +31,10 @@ public class ProductEgressServiceImpl implements ProductEgressService {
         Product returnProduct = productRepository.insert(saveProduct);
         return ProductUtils.convertProductToProductDto(returnProduct);
     }
+
+    @Override
+    public Boolean deleteProduct(String productId) {
+        productRepository.deleteById(productId);
+        return true;
+    }
 }

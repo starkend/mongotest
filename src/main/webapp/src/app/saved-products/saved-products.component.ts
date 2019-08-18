@@ -15,7 +15,7 @@ export class SavedProductsComponent implements OnInit {
 
   ngOnInit() {
     this.getSavedProductList();
-    this.productColumns = ['name', 'brandName'];
+    this.productColumns = ['name', 'brandName', 'deleteButton'];
   }
 
   getSavedProductList() {
@@ -26,5 +26,13 @@ export class SavedProductsComponent implements OnInit {
     );
   }
 
+  deleteProduct(product: any) {
+    this.productsService.deleteProduct(product.id)
+      .subscribe(
+        () => {
+          this.getSavedProductList();
+        }
+      );
+  }
 
 }

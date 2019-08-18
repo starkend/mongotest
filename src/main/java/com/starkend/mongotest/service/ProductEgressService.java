@@ -10,4 +10,6 @@ public interface ProductEgressService {
     List<Product> getProductList();
 
     ProductDto addProduct(ProductDto productDto);
+
+    Boolean deleteProduct(String productId);
 }

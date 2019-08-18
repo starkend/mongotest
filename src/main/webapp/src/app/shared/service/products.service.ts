@@ -25,4 +25,9 @@ export class ProductsService {
   addProduct(product: any): Observable<any>  {
     return this.http.post<any>(environment.apiUrl + '/addProduct', product );
   }
+
+  deleteProduct(productId: string): Observable<any> {
+    return this.http.post<any>( environment.apiUrl + '/deleteProduct', productId);
+  }
+
 }

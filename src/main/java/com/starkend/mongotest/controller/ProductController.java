@@ -36,4 +36,10 @@ public class ProductController {
     public ProductDto addProduct(@RequestBody ProductDto productDto) {
         return productEgressService.addProduct(productDto);
     }
+
+    @PostMapping("/deleteProduct")
+    public Boolean deleteProduct(@RequestBody String productId) {
+        return productEgressService.deleteProduct(productId);
+    }
+
 }

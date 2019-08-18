@@ -21,4 +21,8 @@ export class ProductsService {
   searchProducts(searchInput: string): Observable<any>  {
     return this.http.post<any>(environment.apiUrl + '/searchProducts', searchInput);
   }
+
+  addProduct(product: any): Observable<any>  {
+    return this.http.post<any>(environment.apiUrl + '/addProduct', product );
+  }
 }

@@ -16,7 +16,7 @@ export class ProductsSearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchInput = '';
-    this.productColumns = ['name', 'brandName'];
+    this.productColumns = ['name', 'brandName', 'addButton'];
     this.getProductList();
   }
 
@@ -32,6 +32,13 @@ export class ProductsSearchComponent implements OnInit {
     this.productsService.searchProducts(this.searchInput)
       .subscribe( data => {
         this.products = data;
+      });
+  }
+
+  addProduct(product: any) {
+    this.productsService.addProduct(product)
+      .subscribe( () => {
+        this.searchProducts();
       });
   }
 }

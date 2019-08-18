@@ -31,4 +31,9 @@ public class ProductController {
     public List<ProductDto> searchProducts(@RequestBody String inputString) {
         return productIngressService.getItemsByQuery(inputString);
     }
+
+    @PostMapping("/addProduct")
+    public ProductDto addProduct(@RequestBody ProductDto productDto) {
+        return productEgressService.addProduct(productDto);
+    }
 }

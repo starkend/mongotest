@@ -34,6 +34,11 @@
         <td mat-cell *matCellDef="let product"> {{product.brand_name}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="addButton">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let product"> <button (click)="addProduct(product)" mat-raised-button>Add Product</button> </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="productColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: productColumns;"></tr>
     </table>

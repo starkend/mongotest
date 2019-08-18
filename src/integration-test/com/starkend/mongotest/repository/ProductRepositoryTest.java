@@ -29,9 +29,12 @@ public class ProductRepositoryTest {
 
         productRepository.insert(product);
 
-        Object findProduct = productRepository.findByName(product.getName());
+        Product findProduct = productRepository.findByName(product.getName());
 
         assertNotNull(findProduct);
+
+        productRepository.delete(findProduct);
+
     }
 
     @Test

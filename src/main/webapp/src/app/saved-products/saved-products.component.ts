@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from "../shared/service/products.service";
+import {ProductsService} from '../shared/service/products.service';
 
 @Component({
   selector: 'app-saved-products',
@@ -15,7 +15,7 @@ export class SavedProductsComponent implements OnInit {
 
   ngOnInit() {
     this.getSavedProductList();
-    this.productColumns = ['name','brandName'];
+    this.productColumns = ['name', 'brandName'];
   }
 
   getSavedProductList() {

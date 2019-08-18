@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { ProductsSearchComponent } from './products-search/products-search.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import {FlexLayoutModule} from '@angular/flex-layout'
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
@@ -22,7 +22,7 @@ import {
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import { SavedProductsComponent } from './saved-products/saved-products.component';
 
 @NgModule({

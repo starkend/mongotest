@@ -15,7 +15,7 @@ export class SavedProductsComponent implements OnInit {
 
   ngOnInit() {
     this.getSavedProductList();
-    this.productColumns = ['name', 'brandName', 'deleteButton'];
+    this.productColumns = ['name', 'brandName', 'size', 'deleteButton'];
   }
 
   getSavedProductList() {

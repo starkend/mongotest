@@ -53,4 +53,14 @@ public class ProductEgressServiceImpl implements ProductEgressService {
 
         return productList;
     }
+
+    @Override
+    public List<Product> searchByPartialBrandName(String partialBrandName) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("brandName").regex(partialBrandName));
+
+        List<Product> productList = mongoTemplate.find(query, Product.class);
+
+        return productList;
+    }
 }

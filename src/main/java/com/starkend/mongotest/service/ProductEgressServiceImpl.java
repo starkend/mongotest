@@ -5,6 +5,9 @@ import com.starkend.mongotest.model.Product;
 import com.starkend.mongotest.repository.ProductRepository;
 import com.starkend.mongotest.util.ProductUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +19,9 @@ public class ProductEgressServiceImpl implements ProductEgressService {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 
     @Override
     public List<Product> getProductList() {
@@ -36,5 +42,15 @@ public class ProductEgressServiceImpl implements ProductEgressService {
     public Boolean deleteProduct(String productId) {
         productRepository.deleteById(productId);
         return true;
+    }
+
+    @Override
+    public List<Product> queryByPartialName(String partialName) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").regex(partialName));
+
+        List<Product> productList = mongoTemplate.find(query, Product.class);
+
+        return productList;
     }
 }

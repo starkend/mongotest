@@ -28,4 +28,12 @@ public class ProductEgressServiceImplTest {
 
         assertFalse(productList.isEmpty());
     }
+
+    @Test
+    public void whenQueryByPartialName_thenReturnProduct() {
+        List<Product> productList = productEgressService.queryByPartialName("Crust");
+
+        assertNotNull(productList);
+        assertFalse(productList.isEmpty());
+    }
 }

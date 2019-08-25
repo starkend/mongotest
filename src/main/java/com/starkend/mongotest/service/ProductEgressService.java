@@ -12,4 +12,6 @@ public interface ProductEgressService {
     ProductDto addProduct(ProductDto productDto);
 
     Boolean deleteProduct(String productId);
+
+    List<Product> queryByPartialName(String partialName);
 }

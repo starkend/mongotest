@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductDto {
+public class ProductDto implements Comparable<ProductDto> {
 
     private Long gtin14;
 
@@ -258,5 +258,10 @@ public class ProductDto {
 
     public void setAlcoholByVolume(String alcoholByVolume) {
         this.alcoholByVolume = alcoholByVolume;
+    }
+
+    @Override
+    public int compareTo(ProductDto o) {
+        return this.getName().compareTo(o.getName());
     }
 }

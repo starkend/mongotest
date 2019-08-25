@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="products")
 @TypeAlias("product")
-public class Product {
+public class Product implements Comparable<Product> {
 
     @Id
     private String id;
@@ -285,5 +285,10 @@ public class Product {
                 ", pages='" + pages + '\'' +
                 ", alcoholByVolume='" + alcoholByVolume + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.getName().compareTo(o.getName());
     }
 }

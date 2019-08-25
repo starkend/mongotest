@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -50,6 +51,7 @@ public class ProductEgressServiceImpl implements ProductEgressService {
         query.addCriteria(Criteria.where("name").regex(partialName));
 
         List<Product> productList = mongoTemplate.find(query, Product.class);
+        Collections.sort(productList);
 
         return productList;
     }
@@ -60,6 +62,7 @@ public class ProductEgressServiceImpl implements ProductEgressService {
         query.addCriteria(Criteria.where("brandName").regex(partialBrandName));
 
         List<Product> productList = mongoTemplate.find(query, Product.class);
+        Collections.sort(productList);
 
         return productList;
     }

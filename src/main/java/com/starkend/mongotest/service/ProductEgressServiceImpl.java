@@ -45,7 +45,7 @@ public class ProductEgressServiceImpl implements ProductEgressService {
     }
 
     @Override
-    public List<Product> queryByPartialName(String partialName) {
+    public List<Product> searchByPartialName(String partialName) {
         Query query = new Query();
         query.addCriteria(Criteria.where("name").regex(partialName));
 

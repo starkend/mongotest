@@ -34,4 +34,8 @@ export class ProductsService {
     return this.http.post<any>(environment.apiUrl + '/searchMongoByName', searchByNameInput);
   }
 
+  searchByBrand(searchByBrandInput: string): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + '/searchMongoByBrand', searchByBrandInput);
+  }
+
 }

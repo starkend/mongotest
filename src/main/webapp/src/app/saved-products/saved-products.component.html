@@ -9,6 +9,7 @@
   <div fxFlex="80%" fxFlexOffset="10%" >
     <h2>MongoDB Products</h2>
 
+    <mat-card>
     <mat-form-field appearance="fill">
       <input matInput placeholder="Search by Name"
              [(ngModel)]="searchByNameInput">
@@ -16,6 +17,13 @@
 
     <button (click)="searchByName()" mat-raised-button>Search by Name</button>
 
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Search by Brand"
+             [(ngModel)]="searchByBrandInput">
+    </mat-form-field>
+
+    <button (click)="searchByBrand()" mat-raised-button>Search by Brand</button>
+    </mat-card>
     <hr />
 
     <table mat-table width="100%" [dataSource]="products" class="mat-elevation-z8">

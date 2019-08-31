@@ -47,6 +47,11 @@ public class ProductController {
         return productEgressService.searchByPartialName(inputString);
     }
 
+    @PostMapping("/searchMongoByBrand")
+    public List<Product> searchMongoByBrand(@RequestBody String inputString) {
+        return productEgressService.searchByPartialBrandName(inputString);
+    }
+
 
 
 }

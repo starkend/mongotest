@@ -30,4 +30,8 @@ export class ProductsService {
     return this.http.post<any>( environment.apiUrl + '/deleteProduct', productId);
   }
 
+  searchByName(searchByNameInput: string): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + '/searchMongoByName', searchByNameInput);
+  }
+
 }

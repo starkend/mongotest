@@ -9,6 +9,7 @@ import {ProductsService} from '../shared/service/products.service';
 export class SavedProductsComponent implements OnInit {
   products: Array<any>;
   productColumns: Array<any>;
+  searchByNameInput: string;
 
   constructor(private productsService: ProductsService) {
   }
@@ -35,4 +36,10 @@ export class SavedProductsComponent implements OnInit {
       );
   }
 
+  searchByName() {
+    this.productsService.searchByName(this.searchByNameInput)
+      .subscribe( data => {
+        this.products = data;
+      });
+  }
 }

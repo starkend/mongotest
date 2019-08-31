@@ -42,4 +42,11 @@ public class ProductController {
         return productEgressService.deleteProduct(productId);
     }
 
+    @PostMapping("/searchMongoByName")
+    public List<Product> searchMongoByName(@RequestBody String inputString) {
+        return productEgressService.searchByPartialName(inputString);
+    }
+
+
+
 }

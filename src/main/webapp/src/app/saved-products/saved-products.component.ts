@@ -37,9 +37,13 @@ export class SavedProductsComponent implements OnInit {
   }
 
   searchByName() {
-    this.productsService.searchByName(this.searchByNameInput)
-      .subscribe( data => {
-        this.products = data;
-      });
+    if (this.searchByNameInput === '') {
+      this.getSavedProductList();
+    } else {
+      this.productsService.searchByName(this.searchByNameInput)
+        .subscribe( data => {
+          this.products = data;
+        });
+    }
   }
 }

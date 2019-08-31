@@ -1,51 +1,56 @@
-<div fxLayout="row" fxLayoutAlign="start start" >
+<div fxLayout="row" fxLayoutAlign="start start">
   <div fxFlex="40%" fxFlexOffset="25%">
     <h1>Saved Products</h1>
   </div>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="start start" >
+<div fxLayout="row" fxLayoutAlign="start start">
 
-  <div fxFlex="80%" fxFlexOffset="10%" >
+  <div fxFlex="80%" fxFlexOffset="10%">
     <h2>MongoDB Products</h2>
 
     <mat-card>
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="Search by Name"
-             [(ngModel)]="searchByNameInput">
-    </mat-form-field>
+      <mat-card>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Search by Name"
+                 [(ngModel)]="searchByNameInput">
+        </mat-form-field>
 
-    <button (click)="searchByName()" mat-raised-button>Search by Name</button>
+        <button (click)="searchByName()" mat-raised-button>Search by Name</button>
+      </mat-card>
+      <mat-card>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Search by Brand"
+                 [(ngModel)]="searchByBrandInput">
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="Search by Brand"
-             [(ngModel)]="searchByBrandInput">
-    </mat-form-field>
-
-    <button (click)="searchByBrand()" mat-raised-button>Search by Brand</button>
+        <button (click)="searchByBrand()" mat-raised-button>Search by Brand</button>
+      </mat-card>
     </mat-card>
-    <hr />
+    <hr/>
 
     <table mat-table width="100%" [dataSource]="products" class="mat-elevation-z8">
 
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <th mat-header-cell *matHeaderCellDef> Name</th>
         <td mat-cell *matCellDef="let product"> {{product.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="brandName">
-        <th mat-header-cell *matHeaderCellDef> Brand Name </th>
+        <th mat-header-cell *matHeaderCellDef> Brand Name</th>
         <td mat-cell *matCellDef="let product"> {{product.brandName}} </td>
       </ng-container>
 
       <ng-container matColumnDef="size">
-        <th mat-header-cell *matHeaderCellDef> Size </th>
+        <th mat-header-cell *matHeaderCellDef> Size</th>
         <td mat-cell *matCellDef="let product"> {{product.size}} </td>
       </ng-container>
 
       <ng-container matColumnDef="deleteButton">
-        <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let product"> <button (click)="deleteProduct(product)" mat-raised-button>Remove Product</button> </td>
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let product">
+          <button (click)="deleteProduct(product)" mat-raised-button>Remove Product</button>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="productColumns"></tr>

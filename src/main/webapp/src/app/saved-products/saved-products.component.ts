@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductsService} from '../shared/service/products.service';
 
 @Component({
@@ -42,7 +42,7 @@ export class SavedProductsComponent implements OnInit {
       this.getSavedProductList();
     } else {
       this.productsService.searchByName(this.searchByNameInput)
-        .subscribe( data => {
+        .subscribe(data => {
           this.products = data;
         });
     }
@@ -53,7 +53,7 @@ export class SavedProductsComponent implements OnInit {
       this.getSavedProductList();
     } else {
       this.productsService.searchByBrand(this.searchByBrandInput)
-        .subscribe( data => {
+        .subscribe(data => {
           this.products = data;
         });
     }

@@ -8,7 +8,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getSavedProductList(): Observable<any> {
     return this.http.get(environment.apiUrl + '/savedProductList');
@@ -18,16 +19,16 @@ export class ProductsService {
     return this.http.get(environment.apiUrl + '/apiProductList');
   }
 
-  searchProducts(searchInput: string): Observable<any>  {
+  searchProducts(searchInput: string): Observable<any> {
     return this.http.post<any>(environment.apiUrl + '/searchProducts', searchInput);
   }
 
-  addProduct(product: any): Observable<any>  {
-    return this.http.post<any>(environment.apiUrl + '/addProduct', product );
+  addProduct(product: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + '/addProduct', product);
   }
 
   deleteProduct(productId: string): Observable<any> {
-    return this.http.post<any>( environment.apiUrl + '/deleteProduct', productId);
+    return this.http.post<any>(environment.apiUrl + '/deleteProduct', productId);
   }
 
   searchByName(searchByNameInput: string): Observable<any> {

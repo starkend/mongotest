@@ -30,7 +30,7 @@ export class ProductsSearchComponent implements OnInit {
 
   searchProducts() {
     this.productsService.searchProducts(this.searchInput)
-      .subscribe( data => {
+      .subscribe(data => {
         this.products = data;
       });
   }

@@ -1,7 +1,6 @@
 package com.starkend.mongotest.service;
 
 import com.starkend.mongotest.dto.ProductDto;
-import com.starkend.mongotest.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -29,9 +28,6 @@ public class ProductIngressServiceImpl implements ProductIngressService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private ProductRepository productRepository;
-
     @Override
     public List<ProductDto> getItemsList() {
 
@@ -51,7 +47,9 @@ public class ProductIngressServiceImpl implements ProductIngressService {
     public List<ProductDto> getItemsByQuery(String queryString) {
         HttpEntity<?> entity = new HttpEntity<>(buildHeaders());
 
-        String preparedQueryString = prepareQueryString(queryString);
+        //NOTE: The Datakick API requires a plus sign(+) between multi-word search items
+        //      For example Peanut Butter would be Peanut+Butter when passed to Datakick
+        String preparedQueryString = prepareDatakickQueryString(queryString);
 
         MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
         queryParams.put(QUERY_PARAM, Collections.singletonList(preparedQueryString));
@@ -79,7 +77,7 @@ public class ProductIngressServiceImpl implements ProductIngressService {
                 .queryParams(params);
     }
 
-    private String prepareQueryString(String inputString) {
+    private String prepareDatakickQueryString(String inputString) {
         String outputString = inputString
                 .trim()
                 .replaceAll(" +", " ")

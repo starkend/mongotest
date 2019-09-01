@@ -11,7 +11,7 @@
 
     <mat-card>
       <mat-card>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" (keyup.enter)="searchByNameOrBrand()">
           <input matInput placeholder="Search by Name or Brand"
                  [(ngModel)]="searchByNameOrBrandInput" >
         </mat-form-field>

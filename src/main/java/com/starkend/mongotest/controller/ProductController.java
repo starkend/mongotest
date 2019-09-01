@@ -42,16 +42,6 @@ public class ProductController {
         return productEgressService.deleteProduct(productId);
     }
 
-    @PostMapping("/searchMongoByName")
-    public List<Product> searchMongoByName(@RequestBody String inputString) {
-        return productEgressService.searchByPartialName(inputString);
-    }
-
-    @PostMapping("/searchMongoByBrand")
-    public List<Product> searchMongoByBrand(@RequestBody String inputString) {
-        return productEgressService.searchByPartialBrandName(inputString);
-    }
-
     @PostMapping("/searchMongoByNameOrBrand")
     public List<Product> searchMongoByNameOrBrand(@RequestBody String inputString) {
         return productEgressService.searchByPartialNameOrBrand(inputString);

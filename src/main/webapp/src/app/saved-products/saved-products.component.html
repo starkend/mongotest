@@ -13,26 +13,10 @@
       <mat-card>
         <mat-form-field appearance="fill">
           <input matInput placeholder="Search by Name or Brand"
-                 [(ngModel)]="searchByNameOrBrandInput">
+                 [(ngModel)]="searchByNameOrBrandInput" >
         </mat-form-field>
 
-        <button (click)="searchByNameOrBrand()" mat-raised-button>Search</button>
-      </mat-card>
-      <mat-card>
-        <mat-form-field appearance="fill">
-          <input matInput placeholder="Search by Name"
-                 [(ngModel)]="searchByNameInput">
-        </mat-form-field>
-
-        <button (click)="searchByName()" mat-raised-button>Search by Name</button>
-      </mat-card>
-      <mat-card>
-        <mat-form-field appearance="fill">
-          <input matInput placeholder="Search by Brand"
-                 [(ngModel)]="searchByBrandInput">
-        </mat-form-field>
-
-        <button (click)="searchByBrand()" mat-raised-button>Search by Brand</button>
+        <button (click)="searchByNameOrBrand()"  mat-raised-button>Search</button>
       </mat-card>
     </mat-card>
     <hr/>

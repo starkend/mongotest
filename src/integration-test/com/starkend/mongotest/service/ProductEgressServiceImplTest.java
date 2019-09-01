@@ -30,22 +30,6 @@ public class ProductEgressServiceImplTest {
     }
 
     @Test
-    public void whenSearchByPartialName_thenReturnMatchingProducts() {
-        List<Product> productList = productEgressService.searchByPartialName("Crust");
-
-        assertNotNull(productList);
-        assertFalse(productList.isEmpty());
-    }
-
-    @Test
-    public void whenSearchByPartialBrandName_thenReturnMatchingProducts() {
-        List<Product> productList = productEgressService.searchByPartialBrandName("Country");
-
-        assertNotNull(productList);
-        assertFalse(productList.isEmpty());
-    }
-
-    @Test
     public void whenSearchByPartialBrandOrName_thenReturnMatchingProducts() {
         List<Product> productList = productEgressService.searchByPartialNameOrBrand("Syrup");
 

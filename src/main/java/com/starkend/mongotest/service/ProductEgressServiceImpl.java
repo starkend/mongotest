@@ -46,28 +46,6 @@ public class ProductEgressServiceImpl implements ProductEgressService {
     }
 
     @Override
-    public List<Product> searchByPartialName(String partialName) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("name").regex(partialName));
-
-        List<Product> productList = mongoTemplate.find(query, Product.class);
-        Collections.sort(productList);
-
-        return productList;
-    }
-
-    @Override
-    public List<Product> searchByPartialBrandName(String partialBrandName) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("brandName").regex(partialBrandName));
-
-        List<Product> productList = mongoTemplate.find(query, Product.class);
-        Collections.sort(productList);
-
-        return productList;
-    }
-
-    @Override
     public List<Product> searchByPartialNameOrBrand(String searchInput) {
         Query query = new Query();
         query.addCriteria(

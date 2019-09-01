@@ -38,7 +38,7 @@ export class SavedProductsComponent implements OnInit {
   }
 
   searchByName() {
-    if (this.searchByNameInput === '') {
+    if (this.searchByNameInput === '' || this.searchByNameInput === undefined) {
       this.getSavedProductList();
     } else {
       this.productsService.searchByName(this.searchByNameInput)
@@ -49,7 +49,7 @@ export class SavedProductsComponent implements OnInit {
   }
 
   searchByBrand() {
-    if (this.searchByBrandInput === '') {
+    if (this.searchByBrandInput === '' || this.searchByBrandInput === undefined) {
       this.getSavedProductList();
     } else {
       this.productsService.searchByBrand(this.searchByBrandInput)

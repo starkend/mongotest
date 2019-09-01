@@ -16,4 +16,6 @@ public interface ProductEgressService {
     List<Product> searchByPartialName(String partialName);
 
     List<Product> searchByPartialBrandName(String partialBrandName);
+
+    List<Product> searchByPartialNameOrBrand(String searchInput);
 }

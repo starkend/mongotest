@@ -11,6 +11,7 @@ export class SavedProductsComponent implements OnInit {
   productColumns: Array<any>;
   searchByNameInput: string;
   searchByBrandInput: string;
+  searchByNameOrBrandInput: string;
 
   constructor(private productsService: ProductsService) {
   }
@@ -57,6 +58,17 @@ export class SavedProductsComponent implements OnInit {
           this.products = data;
         });
     }
-
   }
+
+  searchByNameOrBrand() {
+    if (this.searchByNameOrBrandInput === '' || this.searchByNameOrBrandInput === undefined) {
+      this.getSavedProductList();
+    } else {
+      this.productsService.searchByNameOrBrand(this.searchByNameOrBrandInput)
+        .subscribe(data => {
+          this.products = data;
+        });
+    }
+  }
+
 }

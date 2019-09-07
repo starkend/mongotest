@@ -25,7 +25,9 @@ public class ProductController {
     }
 
     @GetMapping("/apiProductList")
-    public List<ProductDto> getAPIProductList() { return productIngressService.getItemsList(); }
+    public List<ProductDto> getAPIProductList() {
+        return productIngressService.getItemsList();
+    }
 
     @PostMapping("/searchProducts")
     public List<ProductDto> searchProducts(@RequestBody String inputString) {

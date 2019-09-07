@@ -38,7 +38,8 @@ public class ProductIngressServiceImpl implements ProductIngressService {
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference<List<ProductDto>>() {
-                });
+                }
+        );
 
         return responseEntity.getBody();
     }

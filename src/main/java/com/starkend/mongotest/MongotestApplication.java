@@ -43,9 +43,13 @@ public class MongotestApplication {
     }
 
     @Bean
-    public ProductIngressService productIngressService() { return new ProductIngressServiceImpl(); }
+    public ProductIngressService productIngressService() {
+        return new ProductIngressServiceImpl();
+    }
 
     @Bean
-    public ProductEgressService productEgressService() { return new ProductEgressServiceImpl(); }
+    public ProductEgressService productEgressService() {
+        return new ProductEgressServiceImpl();
+    }
 
 }

@@ -50,8 +50,8 @@ public class ProductEgressServiceImpl implements ProductEgressService {
         Query query = new Query();
         query.addCriteria(
                 new Criteria().orOperator(
-                        Criteria.where("name").regex(searchInput,"i"),
-                        Criteria.where("brandName").regex(searchInput,"i")
+                        Criteria.where("name").regex(searchInput, "i"),
+                        Criteria.where("brandName").regex(searchInput, "i")
                 )
         );
 

@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="products")
+@Document(collection = "products")
 @TypeAlias("product")
 public class Product implements Comparable<Product> {
 

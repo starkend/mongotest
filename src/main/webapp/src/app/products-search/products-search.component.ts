@@ -16,7 +16,7 @@ export class ProductsSearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchInput = '';
-    this.productColumns = ['name', 'brandName', 'size', 'addButton'];
+    this.productColumns = ['name', 'brandName', 'author', 'size', 'addButton'];
     this.getProductList();
   }
 

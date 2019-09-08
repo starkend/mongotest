@@ -14,4 +14,6 @@ public interface ProductEgressService {
     Boolean deleteProduct(String productId);
 
     List<Product> searchByPartialNameOrBrand(String searchInput);
+
+    List<Product> searchByPartial(String searchInput);
 }

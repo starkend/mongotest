@@ -60,4 +60,21 @@ public class ProductEgressServiceImpl implements ProductEgressService {
 
         return productList;
     }
+
+    @Override
+    public List<Product> searchByPartial(String searchInput) {
+        Query query = new Query();
+        query.addCriteria(
+                new Criteria().orOperator(
+                        Criteria.where("name").regex(searchInput, "i"),
+                        Criteria.where("brandName").regex(searchInput, "i"),
+                        Criteria.where("author").regex(searchInput, "i")
+                )
+        );
+
+        List<Product> productList = mongoTemplate.find(query, Product.class);
+        Collections.sort(productList);
+
+        return productList;
+    }
 }

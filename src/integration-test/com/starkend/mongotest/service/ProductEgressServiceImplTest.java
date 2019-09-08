@@ -36,4 +36,12 @@ public class ProductEgressServiceImplTest {
         assertNotNull(productList);
         assertFalse(productList.isEmpty());
     }
+
+    @Test
+    public void whenSearchByPartial_thenReturnMatchingProducts() {
+        List<Product> productList = productEgressService.searchByPartial("ru");
+
+        assertNotNull(productList);
+        assertFalse(productList.isEmpty());
+    }
 }

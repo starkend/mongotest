@@ -38,10 +38,15 @@
         <td mat-cell *matCellDef="let product"> {{product.size}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef> Author</th>
+        <td mat-cell *matCellDef="let product"> {{product.author}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="deleteButton">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let product">
-          <button (click)="deleteProduct(product)" mat-raised-button>Remove Product</button>
+          <button (click)="deleteProduct(product)" mat-raised-button>Remove</button>
         </td>
       </ng-container>
 

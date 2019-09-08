@@ -9,7 +9,7 @@
   <div fxFlex="80%" fxFlexOffset="10%">
     <h2>API Products</h2>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" (keyup.enter)="searchProducts()">
       <input matInput placeholder="Enter Search Criteria"
              [(ngModel)]="searchInput">
     </mat-form-field>

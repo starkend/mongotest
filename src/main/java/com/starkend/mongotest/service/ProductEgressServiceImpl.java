@@ -17,9 +17,9 @@ import java.util.stream.StreamSupport;
 @Service
 public class ProductEgressServiceImpl implements ProductEgressService {
 
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
-    MongoTemplate mongoTemplate;
+    private MongoTemplate mongoTemplate;
 
     public ProductEgressServiceImpl(ProductRepository productRepository, MongoTemplate mongoTemplate) {
         this.productRepository = productRepository;

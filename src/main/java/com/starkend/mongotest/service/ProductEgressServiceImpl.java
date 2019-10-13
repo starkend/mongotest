@@ -4,7 +4,6 @@ import com.starkend.mongotest.dto.ProductDto;
 import com.starkend.mongotest.model.Product;
 import com.starkend.mongotest.repository.ProductRepository;
 import com.starkend.mongotest.util.ProductUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -18,11 +17,14 @@ import java.util.stream.StreamSupport;
 @Service
 public class ProductEgressServiceImpl implements ProductEgressService {
 
-    @Autowired
     ProductRepository productRepository;
 
-    @Autowired
     MongoTemplate mongoTemplate;
+
+    public ProductEgressServiceImpl(ProductRepository productRepository, MongoTemplate mongoTemplate) {
+        this.productRepository = productRepository;
+        this.mongoTemplate = mongoTemplate;
+    }
 
     @Override
     public List<Product> getProductList() {

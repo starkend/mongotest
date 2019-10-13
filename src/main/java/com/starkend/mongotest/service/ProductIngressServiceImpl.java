@@ -1,7 +1,6 @@
 package com.starkend.mongotest.service;
 
 import com.starkend.mongotest.dto.ProductDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -25,8 +24,11 @@ public class ProductIngressServiceImpl implements ProductIngressService {
     @Value("${service.datakick.url}")
     private String BASE_URL;
 
-    @Autowired
     private RestTemplate restTemplate;
+
+    public ProductIngressServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @Override
     public List<ProductDto> getItemsList() {

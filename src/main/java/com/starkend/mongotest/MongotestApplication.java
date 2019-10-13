@@ -41,15 +41,4 @@ public class MongotestApplication {
     public MongoTemplate mongoTemplate() throws Exception {
         return new MongoTemplate(mongo(), "mongodb");
     }
-
-    @Bean
-    public ProductIngressService productIngressService() {
-        return new ProductIngressServiceImpl();
-    }
-
-    @Bean
-    public ProductEgressService productEgressService() {
-        return new ProductEgressServiceImpl();
-    }
-
 }

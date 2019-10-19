@@ -1,11 +1,7 @@
 package com.starkend.mongotest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.MongoClient;
-import com.starkend.mongotest.service.ProductEgressService;
-import com.starkend.mongotest.service.ProductEgressServiceImpl;
-import com.starkend.mongotest.service.ProductIngressService;
-import com.starkend.mongotest.service.ProductIngressServiceImpl;
+import com.mongodb.client.MongoClients;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -33,12 +29,7 @@ public class MongotestApplication {
     }
 
     @Bean
-    public MongoClient mongo() {
-        return new MongoClient("localhost", 27017);
-    }
-
-    @Bean
     public MongoTemplate mongoTemplate() throws Exception {
-        return new MongoTemplate(mongo(), "mongodb");
+        return new MongoTemplate(MongoClients.create(), "mongodb");
     }
 }

@@ -22,7 +22,7 @@ public class ProductController {
     }
 
     @GetMapping("/savedProductList")
-    public List<Product> getProductList() {
+    public List<Product> getSavedProductList() {
         return productEgressService.getProductList();
     }
 

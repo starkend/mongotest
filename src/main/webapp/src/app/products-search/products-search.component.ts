@@ -29,7 +29,7 @@ export class ProductsSearchComponent implements OnInit {
   }
 
   searchProducts() {
-    if (this.searchInput === undefined || this.searchInput === '') {
+    if (this.searchInput === undefined || this.searchInput.trim() === '') {
       this.getProductList();
     } else {
       this.searchProductsByQuery();

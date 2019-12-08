@@ -29,10 +29,14 @@ export class ProductsSearchComponent implements OnInit {
   }
 
   searchProducts() {
-    this.productsService.searchProducts(this.searchInput)
-      .subscribe(data => {
-        this.products = data;
-      });
+    if (this.searchInput === undefined || this.searchInput === '') {
+      this.getProductList();
+    } else {
+      this.productsService.searchProducts(this.searchInput)
+        .subscribe(data => {
+          this.products = data;
+        });
+    }
   }
 
   addProduct(product: any) {

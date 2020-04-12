@@ -16,7 +16,7 @@
 
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>14</java.version>
         <spring.framework.version>5.2.5.RELEASE</spring.framework.version>
     </properties>
 

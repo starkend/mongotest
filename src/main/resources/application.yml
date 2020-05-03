@@ -9,3 +9,11 @@ service:
   datakick:
     url: https://www.datakick.org/api/items
 
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  health:
+    mongo:
+      enabled: true

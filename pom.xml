@@ -17,7 +17,6 @@
 
     <properties>
         <java.version>14</java.version>
-        <spring.framework.version>5.2.9.RELEASE</spring.framework.version>
     </properties>
 
     <dependencies>
